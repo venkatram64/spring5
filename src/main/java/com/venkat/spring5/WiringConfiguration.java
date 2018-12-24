@@ -10,8 +10,8 @@ public class WiringConfiguration {
 
     @Bean(initMethod = "init", destroyMethod = "destroyed")
     @Scope(scopeName = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-    public PlainSimpleLogic plainSimpleLogic(){
-        return new PlainSimpleLogic();
+    public PlainSimpleLogic plainSimpleLogic(SimpleLogic simpleLogic){
+        return new PlainSimpleLogic(simpleLogic);
     }
 
 }

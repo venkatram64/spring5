@@ -28,4 +28,8 @@ public class SimpleLogic implements InitializingBean{
     public void destroyed(){
         System.out.println("SimpleLogic Bean is about to be destroyed.");
     }
+
+    public void doSimpleWork(){
+        System.out.println("Work from simple logic");
+    }
 }

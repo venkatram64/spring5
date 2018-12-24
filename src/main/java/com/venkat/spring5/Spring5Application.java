@@ -1,5 +1,6 @@
 package com.venkat.spring5;
 
+import com.venkat.spring5.aop.TracibleService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -12,6 +13,8 @@ public class Spring5Application {
 		System.out.println(context.getBean(PlainSimpleLogic.class));
 		System.out.println(context.getBean(PlainSimpleLogic.class));
 		System.out.println(context.getBean(PlainSimpleLogic.class));
+		context.getBean(PlainSimpleLogic.class).doSomeWork();
+		context.getBean(TracibleService.class).hello("aop");
 	}
 
 }

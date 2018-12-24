@@ -2,6 +2,7 @@ package com.venkat.spring5;
 
 
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -10,8 +11,12 @@ import javax.annotation.PreDestroy;
 
 public class PlainSimpleLogic implements InitializingBean{
 
-    public PlainSimpleLogic(){
+    //@Autowired
+    private SimpleLogic simpleLogic;
+
+    public PlainSimpleLogic(SimpleLogic simpleLogic){
         System.out.println("PlainSimpleLogic is created.");
+        this.simpleLogic = simpleLogic;
     }
 
 
@@ -27,5 +32,9 @@ public class PlainSimpleLogic implements InitializingBean{
 
     public void destroyed(){
         System.out.println("PlainSimpleLogic Bean is about to be destroyed.");
+    }
+
+    public void doSomeWork(){
+        simpleLogic.doSimpleWork();
     }
 }
