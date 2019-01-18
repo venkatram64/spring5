@@ -11,12 +11,11 @@ import javax.annotation.PreDestroy;
 
 public class PlainSimpleLogic implements InitializingBean{
 
-    //@Autowired
+    @Autowired
     private SimpleLogic simpleLogic;
 
-    public PlainSimpleLogic(SimpleLogic simpleLogic){
+    public PlainSimpleLogic(){
         System.out.println("PlainSimpleLogic is created.");
-        this.simpleLogic = simpleLogic;
     }
 
 

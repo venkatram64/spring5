@@ -17,8 +17,9 @@ public class ExecutionTracerAspect {
     public Object trace(ProceedingJoinPoint pjp) throws Throwable{
         Object[] args = pjp.getArgs();
         String signature = pjp.getSignature().toString();
+        System.out.println("Before Method:'" + signature +"' was called with next arguments " + Arrays.toString(args));
         Object retVal = pjp.proceed(args);
-        System.out.println("Method:'" + signature +"' was called with next arguments " + Arrays.toString(args));
+        System.out.println("After Method:'" + signature +"' was called with next arguments " + Arrays.toString(args));
         return retVal;
     }
 }

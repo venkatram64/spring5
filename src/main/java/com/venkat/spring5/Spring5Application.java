@@ -13,8 +13,10 @@ public class Spring5Application {
 		System.out.println(context.getBean(PlainSimpleLogic.class));
 		System.out.println(context.getBean(PlainSimpleLogic.class));
 		System.out.println(context.getBean(PlainSimpleLogic.class));
+		//above will call the java config
 		context.getBean(PlainSimpleLogic.class).doSomeWork();
 		context.getBean(TracibleService.class).hello("aop");
+		//above will call the java config
 	}
 
 }
