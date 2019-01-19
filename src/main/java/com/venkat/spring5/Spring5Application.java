@@ -1,6 +1,7 @@
 package com.venkat.spring5;
 
 import com.venkat.spring5.aop.TracibleService;
+import com.venkat.spring5.tx.BusinessService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -17,6 +18,14 @@ public class Spring5Application {
 		context.getBean(PlainSimpleLogic.class).doSomeWork();
 		context.getBean(TracibleService.class).hello("aop");
 		//above will call the java config
+
+		//calling the programatic transaction bean
+		context.getBean("businessServiceProgramaticTx", BusinessService.class).doProcess();
+        context.getBean("businessServiceProgramaticTx", BusinessService.class).doProcess2();
+
+        //calling the declarative transaction bean
+        context.getBean("businessServiceDeclarativeTx", BusinessService.class).doProcess();
+        context.getBean("businessServiceDeclarativeTx", BusinessService.class).doProcess2();
 	}
 
 }
