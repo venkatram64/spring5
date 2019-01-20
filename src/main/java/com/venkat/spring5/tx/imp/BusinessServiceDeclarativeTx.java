@@ -20,7 +20,7 @@ public class BusinessServiceDeclarativeTx implements BusinessService {
     public void doProcess2() {
 
         System.out.println("throws testing");
-        throw new IllegalStateException("Hello from Declarative transaction management.");
+        //throw new IllegalStateException("Hello from Declarative transaction management.");
     }
 
 
